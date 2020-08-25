@@ -7,11 +7,16 @@
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-caret-right"></i>用户管理</template>
             <el-menu-item-group>
+<!--       传递参数的写法 name要传给的组件名 params:前端传递id参数 需要对象v-bind绑定 vm双向绑定-->
               <el-menu-item index="1-1">
-                <router-link to="/user/userFile">个人信息</router-link>
+                <router-link :to="{name:'userFile',params:{id: 1}}">个人信息</router-link>
               </el-menu-item>
+<!--              不传递参数的写法-->
               <el-menu-item index="1-2">
                 <router-link to="/user/userList">用户列表</router-link>
+              </el-menu-item>
+              <el-menu-item index="1-3">
+                <router-link to="/goHome">回到首页</router-link>
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -39,7 +44,7 @@
         </el-menu>
       </el-aside>
       <el-container>
-        <el-header style="text-align: right;font-size: 12px;background-color: rgb(65 216 223);padding-top: 25px">
+        <el-header style="text-align: right;font-size: 12px;">
           <el-dropdown>
             <i class="el-icon-setting" style="margin-right: 15px"></i>
             <el-dropdown-menu slot="dropdown">
@@ -64,5 +69,13 @@ export default {
 </script>
 
 <style scoped>
+.el-header{
+  background-color: #2acaff;
+  color: #333;
+  line-height: 60px;
+}
+.el-aside{
+  color: #333;
+}
 
 </style>
