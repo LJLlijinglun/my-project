@@ -15,10 +15,12 @@ export default new vueRouter({
     {
       //首页
       //路由的路径
-      path: '/index',
+      path: '/index/:name',//接收name参数
       name: 'index',
       //跳转的组件
       component: index,
+      props:true,
+
 
       //嵌套路由
       children:[

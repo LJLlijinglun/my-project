@@ -63,7 +63,7 @@ export default {
       this.$refs[formName].validate((valid) =>{
         if (valid){
           //使用vue-router路由到指定的页面,该方式为编程式导航
-          this.$router.push("/index");
+          this.$router.push("/index/"+this.from.username);
         }else {
           this.dialogVisible = true;
           return false;
