@@ -22,10 +22,10 @@ export default new vueRouter({
 
       //嵌套路由
       children:[
-        //个人信息页 接收参数id 设置props:true为了能够接收传递参数
-        {path: '/user/userFile/:id', name:'userFile', component: UserFile,props:true},
+        //个人信息页
+        {path: '/user/userFile', name:'userFile', component: UserFile},
         //用户列表页
-        {path: '/user/userList', name:'userList', component: UserList},
+        {path: '/user/userList', name:'userList', component: UserList}
       ]
     },
     {
@@ -35,13 +35,7 @@ export default new vueRouter({
 
       //跳转的组件
       component: Login,
-    },
-    //重定向
-    {
-      path: '/goHome',
-      redirect:'/index'
-      },
-
+    }
 
   ]
 })
