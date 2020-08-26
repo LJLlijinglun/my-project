@@ -4,12 +4,15 @@ import index from '../views/index'
 import  Login from '../views/Login'
 import UserFile from '../views/user/UserFile'
 import  UserList from '../views/user/UserList'
+import  NotFound from '../views/NotFound'
 
 //安装路由
 Vue.use(vueRouter)
 
 //配置导出路由
 export default new vueRouter({
+  //路由方式history 默认方式hash
+  mode:'history',
   routes: [
 
     {
@@ -43,6 +46,12 @@ export default new vueRouter({
       path: '/goHome',
       redirect:'/index'
       },
+
+    //实现404报错
+    {
+      path:'*',
+      component: NotFound,
+    }
 
 
   ]
