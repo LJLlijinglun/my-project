@@ -4,7 +4,7 @@ import index from '../views/index'
 import  Login from '../views/Login'
 import UserFile from '../views/user/UserFile'
 import  UserList from '../views/user/UserList'
-import  NotFound from '../views/NotFound'
+// import  NotFound from '../views/NotFound'
 
 //安装路由
 Vue.use(vueRouter)
@@ -48,10 +48,10 @@ export default new vueRouter({
       },
 
     //实现404报错
-    {
-      path:'*',
-      component: NotFound,
-    }
+    // {
+    //   path:'*',
+    //   component: NotFound,
+    // }
 
 
   ]

@@ -7,7 +7,7 @@
           <el-input type="text" placeholder="请输入账号" v-model="from.username"/>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input type="text" placeholder="请输入密码" v-model="from.password"/>
+          <el-input minlength="6" type="text" placeholder="请输入密码" v-model="from.password"/>
         </el-form-item>
         <el-form-item>
           <el-button @click="login('loginFrom')" type="primary">登录</el-button>

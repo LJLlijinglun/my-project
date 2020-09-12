@@ -14,6 +14,36 @@ export default {
   name: "UserFile",
   // 2、接收参数方法二
   props:['id'],
+  data(){
+    return{
+
+    }
+  },
+  // 进入路由之前执行的钩子
+  beforeRouteEnter:(to,from,next)=>{
+    console.log("进入路由之前")//加载数据
+    next(vm => {
+      vm.getData();//进入路由之前执行getData
+    });
+  },
+  // 进入路由之后执行的钩子
+  beforeRouteLeave:(to,from,next)=>{
+    console.log("进入路由之后")
+    next();
+
+  },
+  methods:{
+    getData:function (){
+      this.axios({
+        method:'get',
+        url:'http://localhost:8082/static/mock/data.json'
+      }).then(function (response){
+        console.log(response);
+      })
+    }
+  },
+  mounted() {
+  }
 }
 </script>
 
